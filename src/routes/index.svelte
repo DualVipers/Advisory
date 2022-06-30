@@ -41,8 +41,26 @@
 </script>
 
 <script>
+    import { MetaTags } from "svelte-meta-tags";
+
     export let advisories;
 </script>
+
+<MetaTags
+    title="Dual Vipers Advisory"
+    description="The Dual Vipers Security Advisory"
+    openGraph={{
+        title: "Dual Vipers Advisory",
+        description: "The Dual Vipers Security Advisory",
+        site_name: "Dual Vipers Advisories",
+    }}
+    twitter={{
+        site: "@dual_vs",
+        cardType: "summary",
+        title: "Dual Vipers Advisory",
+        description: "The Dual Vipers Security Advisory",
+    }}
+/>
 
 {#if Object.entries(advisories).length <= 0}
     <h1 class="text-3xl mb-2">No Advisories Posted :)</h1>

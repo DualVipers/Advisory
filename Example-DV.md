@@ -1,6 +1,7 @@
 ---
 id: "DV-1000-00001"
-name: XSS In Embeds
+name: "XSS In Embeds"
+short: "XSS Attack On Statistics Embed"
 cve_id: "CVE-1000-00001"
 cvss_score: "4.4"
 cvss_vector: "CVSS:3.1/AV:A/AC:H/PR:L/UI:N/S:C/C:L/I:N/A:L"

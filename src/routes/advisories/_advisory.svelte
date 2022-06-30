@@ -1,13 +1,61 @@
 <script>
-    export let id = "No ID";
-    export let name = "No Name";
-    export let cve_id = "No CVE";
-    export let cvss_score = "No CVSS Score";
-    export let cvss_vector = "No CVSS Score";
-    export let versions = "No Versions Affected";
-    export let patched = "No Patches";
-    export let publish_date = "1970-01-01";
+    import { MetaTags } from "svelte-meta-tags";
+
+    export let id;
+    export let name;
+    export let short;
+    export let cve_id;
+    export let cvss_score;
+    export let cvss_vector;
+    export let versions;
+    export let patched;
+    export let publish_date;
+
+    id = id || "No ID";
+
+    name = name || "No Name";
+    short = short || "No Short Description";
+    cve_id = cve_id || "No CVE";
+    cvss_score = cvss_score || "No CVSS Score";
+    cvss_vector = cvss_vector || "No CVSS Vector";
+    versions = versions || "No Versions Affected";
+    patched = patched || "No Patches";
+    publish_date = publish_date || "1970-01-01";
+
+    let score_text = "";
+
+    let score = parseInt(cvss_score);
+
+    if (score) {
+        if (score == 0.0) {
+            score_text = "None | ";
+        } else if (score <= 3.9) {
+            score_text = "Low | ";
+        } else if (score <= 6.9) {
+            score_text = "Medium | ";
+        } else if (score <= 8.9) {
+            score_text = "High | ";
+        } else {
+            score_text = "Critical | ";
+        }
+    }
 </script>
+
+<MetaTags
+    title="{id} | {name} | Dual Vipers Advisory"
+    description={short}
+    openGraph={{
+        title: `${id} | ${name} | Dual Vipers Advisory`,
+        description: short,
+        site_name: "Dual Vipers Advisories",
+    }}
+    twitter={{
+        site: "@dual_vs",
+        cardType: "summary",
+        title: `${id} | ${name} | Dual Vipers Advisory`,
+        description: short,
+    }}
+/>
 
 <p class="text-xl mb-1"><a href="/">&lt;- Return</a></p>
 
@@ -24,12 +72,12 @@
         <p class="text-lg">CVE ID:</p>
         <p class="text-lg">{cve_id}</p>
         <p class="text-lg">CVSS Score:</p>
-        <p class="text-lg">{cvss_score}</p>
+        <p class="text-lg">{score_text}{cvss_score}</p>
         <p class="text-lg">CVSS Vector:</p>
         <p class="text-lg">{cvss_vector}</p>
         <p class="text-lg">CVE-ID:</p>
         <p class="text-lg">{cve_id}</p>
-        <p class="text-lg">Versions Affected:</p>
+        <p class="text-lg">Affected Versions:</p>
         <p class="text-lg">{versions}</p>
         <p class="text-lg">Patched Versions:</p>
         <p class="text-lg">{patched}</p>
