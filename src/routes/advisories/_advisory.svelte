@@ -67,6 +67,8 @@
         <p class="text-lg">{id}</p>
         <p class="text-lg">Name:</p>
         <p class="text-lg">{name}</p>
+        <p class="text-lg">Short Description:</p>
+        <p class="text-lg">{short}</p>
         <p class="text-lg">Date Published:</p>
         <p class="text-lg">{publish_date}</p>
         <p class="text-lg">CVE ID:</p>
@@ -75,8 +77,6 @@
         <p class="text-lg">{score_text}{cvss_score}</p>
         <p class="text-lg">CVSS Vector:</p>
         <p class="text-lg">{cvss_vector}</p>
-        <p class="text-lg">CVE-ID:</p>
-        <p class="text-lg">{cve_id}</p>
         <p class="text-lg">Affected Versions:</p>
         <p class="text-lg">{versions}</p>
         <p class="text-lg">Patched Versions:</p>
