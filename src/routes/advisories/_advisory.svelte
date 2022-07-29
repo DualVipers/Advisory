@@ -3,6 +3,7 @@
 
     export let id;
     export let name;
+    export let products;
     export let short;
     export let cve_id;
     export let cvss_score;
@@ -14,6 +15,7 @@
     id = id || "No ID";
 
     name = name || "No Name";
+    products = products || "No Listed Products";
     short = short || "No Short Description";
     cve_id = cve_id || "No CVE";
     cvss_score = cvss_score || "No CVSS Score";
@@ -73,6 +75,8 @@
         <p class="text-lg">{id}</p>
         <p class="text-lg">Name:</p>
         <p class="text-lg">{name}</p>
+        <p class="text-lg">Affected Product(s):</p>
+        <p class="text-lg">{products}</p>
         <p class="text-lg">Short Description:</p>
         <p class="text-lg">{short}</p>
         <p class="text-lg">Date Published:</p>
