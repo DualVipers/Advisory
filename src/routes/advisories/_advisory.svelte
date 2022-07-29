@@ -57,6 +57,12 @@
     }}
 />
 
+{#if cve_id != "No CVE"}
+    <h1 hidden id="cve-hidden">CVE: {cve_id}</h1>
+    <h1 hidden id="date-publish-hidden">Date Published: {publish_date}</h1>
+    <h1 hidden id="description-hidden">Description: {short}</h1>
+{/if}
+
 <p class="text-xl mb-1"><a href="/">&lt;- Return</a></p>
 
 <h1 class="text-4xl mb-4">{id} | {name}:</h1>
